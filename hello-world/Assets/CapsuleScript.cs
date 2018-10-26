@@ -13,9 +13,9 @@ public class CapsuleScript : MonoBehaviour {
 		Transform myTransform = this.transform;
 
 		Vector3 pos = myTransform.position;
-		if (pos.y < -10) {
+		if (pos.y < -20) {
 			pos.x = 0;
-			pos.y = 10;
+			pos.y = 20;
 			pos.z = 0;
 			myTransform.position = pos;
 		}
