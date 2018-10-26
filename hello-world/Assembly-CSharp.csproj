@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CapsuleScript.cs" />
+     <Compile Include="Assets\HitScript.cs" />
      <None Include="Assets\SimpleUnlitShader.shader" />
      <None Include="Assets\SimpleSurfaceShader.shader" />
  <Reference Include="UnityEditor.StandardEvents">
