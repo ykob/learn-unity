@@ -11,6 +11,7 @@ public class CapsuleScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Transform myTransform = this.transform;
+		Rigidbody myRigidbody = GetComponent<Rigidbody>();
 
 		Vector3 pos = myTransform.position;
 		if (pos.y < -20) {
@@ -18,6 +19,7 @@ public class CapsuleScript : MonoBehaviour {
 			pos.y = 20;
 			pos.z = 0;
 			myTransform.position = pos;
+			myRigidbody.velocity = Vector3.zero;
 		}
 	}
 }
