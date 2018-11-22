@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CapsuleScript : MonoBehaviour {
-  private int number;
+  private float number;
 
 	// Use this for initialization
 	void Start () {
-    number = 0;
+    number = 0f;
 	}
 
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class CapsuleScript : MonoBehaviour {
 			pos.y = 20;
 			pos.z = 0;
 			myTransform.position = pos;
-			myRigidbody.velocity = Vector3.zero;
+			myRigidbody.velocity = new Vector3(0, number * -2f, 0);
 
       number = number + 1;
       numberText.text = number.ToString();
