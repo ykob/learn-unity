@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1771100354492136423}
   - component: {fileID: 1771100354492136420}
   - component: {fileID: 1771100354492136421}
+  - component: {fileID: 2319707024619562007}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -99,3 +100,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2319707024619562007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771100354492136426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a12a94d54612a64f972d494d2876330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

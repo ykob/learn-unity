@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 577393590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1115316293}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159365301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,8 @@ GameObject:
   - component: {fileID: 1129358880}
   - component: {fileID: 1129358881}
   - component: {fileID: 1129358882}
-  m_Layer: 0
+  - component: {fileID: 2942493702499169317}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,8 +230,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  shotDelay: 0
+  shotDelay: 0.3
   bullet: {fileID: 3697708681193584282, guid: 90da152692aa9834b97cc8cac1a6b8f1, type: 3}
+  canShot: 1
+  explosion: {fileID: 1771100354492136426, guid: 2d41137142b543a41a5ac1a6ef37ac0c,
+    type: 3}
 --- !u!114 &1129358882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,3 +247,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fafb12ad2493e343af5791e8ecc0680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &2942493702499169317
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200205624793130130}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.12214255, y: 0.23937225}
+      - {x: -0.12009549, y: 0.2395823}
+      - {x: -0.22196305, y: 0.17910266}
+      - {x: -0.24651706, y: -0.13481796}
+      - {x: -0.14652002, y: -0.26198947}
+      - {x: 0.1505332, y: -0.2648232}
+      - {x: 0.24428487, y: -0.13992047}
+      - {x: 0.22446442, y: 0.17249608}
