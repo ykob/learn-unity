@@ -11,6 +11,10 @@ public class Enemy : MonoBehaviour {
 		// ローカル座標のY軸のマイナス方向に移動する
 		spaceship.Move(transform.up * -1);
 
+		if (spaceship.canShot == false) {
+			yield break;
+		}
+
 		while(true) {
 			// 子要素をすべて取得する
 			for (int i = 0; i < transform.childCount; i++) {
