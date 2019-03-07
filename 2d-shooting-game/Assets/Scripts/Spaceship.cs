@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Spaceship : MonoBehaviour {
+[RequireComponent(typeof(Rigidbody2D))]
+public abstract class Spaceship : MonoBehaviour {
 	public float speed; // 移動スピード
 	public float shotDelay; // 弾を打つ間隔
 	public GameObject bullet; // 弾のPrefab
@@ -15,8 +16,6 @@ public class Spaceship : MonoBehaviour {
 	public void Shot(Transform origin) {
 		Instantiate(bullet, origin.position, origin.rotation);
 	}
-	// 機体の移動
-	public void Move(Vector2 direction) {
-		GetComponent<Rigidbody2D>().velocity = direction * speed;
-	}
+
+	protected abstract void Move (Vector2 direction);
 }

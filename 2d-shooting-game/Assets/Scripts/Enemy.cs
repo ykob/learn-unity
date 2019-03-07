@@ -1,17 +1,12 @@
 using UnityEngine;
 ﻿using System.Collections;
 
-public class Enemy : MonoBehaviour {
-	Spaceship spaceship; // Spaceshipコンポーネント
-
+public class Enemy : Spaceship {
 	IEnumerator Start() {
-		// Spaceshipコンポーネントを取得
-		spaceship = GetComponent<Spaceship>();
-
 		// ローカル座標のY軸のマイナス方向に移動する
-		spaceship.Move(transform.up * -1);
+		Move(transform.up * -1);
 
-		if (spaceship.canShot == false) {
+		if (canShot == false) {
 			yield break;
 		}
 
@@ -21,12 +16,16 @@ public class Enemy : MonoBehaviour {
 				Transform shotPosition = transform.GetChild(i);
 
 				// ShotPositionの位置/角度で弾を撃つ
-				spaceship.Shot(shotPosition);
+				Shot(shotPosition);
 			}
 
-			// shotDelay秒待つ
-			yield return new WaitForSeconds(spaceship.shotDelay);
+			//shotDelay秒待つ
+			yield return new WaitForSeconds(shotDelay);
 		}
+	}
+
+	protected override void Move(Vector2 direction) {
+		GetComponent<Rigidbody2D>().velocity = direction * speed;
 	}
 
 	void OnTriggerEnter2D(Collider2D c) {
@@ -40,7 +39,7 @@ public class Enemy : MonoBehaviour {
 		Destroy(c.gameObject);
 
 		// 爆発
-		spaceship.Explosion();
+		Explosion();
 
 		// エネミーの削除
 		Destroy(gameObject);
