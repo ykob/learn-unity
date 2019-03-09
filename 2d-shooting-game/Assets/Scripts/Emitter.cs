@@ -8,12 +8,24 @@ public class Emitter : MonoBehaviour {
 	// 現在のWave
 	private int currentWave;
 
+	// Managerコンポーネント
+	private Manager manager;
+
 	IEnumerator Start() {
 		// Waveが存在しなければコルーチンを終了する
 		if (waves.Length == 0) {
 			yield break;
 		}
+
+		// Managerコンポーネントをシーン内から探して取得する
+		manager = FindObjectOfType<Manager>();
+
 		while (true) {
+			// Waveの子要素のEnemyが全て削除されるまで待機する
+			while (manager.IsPlaying() == false) {
+				yield return new WaitForEndOfFrame();
+			}
+
 			// Waveを作成する
 			GameObject wave = (GameObject)Instantiate(waves[currentWave], transform.position, Quaternion.identity);
 
