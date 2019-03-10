@@ -5,6 +5,8 @@ public class Enemy : Spaceship {
 	public int hp = 1;
 
 	IEnumerator Start() {
+		base.Start();
+
 		// ローカル座標のY軸のマイナス方向に移動する
 		Move(transform.up * -1);
 
@@ -56,6 +58,8 @@ public class Enemy : Spaceship {
 
 			// エネミーの削除
 			Destroy(gameObject);
+		} else {
+			GetAnimator().SetTrigger("Damage");
 		}
 	}
 }
