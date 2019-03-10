@@ -2,6 +2,8 @@ using UnityEngine;
 ﻿using System.Collections;
 
 public class Enemy : Spaceship {
+	public int hp = 1;
+
 	IEnumerator Start() {
 		// ローカル座標のY軸のマイナス方向に移動する
 		Move(transform.up * -1);
@@ -35,13 +37,25 @@ public class Enemy : Spaceship {
 		// レイヤー名がBullet (Player)以外の時は何も行わない
 		if (layerName != "Bullet (Player)") return;
 
+		// PlayerBulletのTransformを取得
+		Transform playerBulletTransform = c.transform.parent;
+
+		// Bulletコンポーネントを取得
+		Bullet bullet = playerBulletTransform.GetComponent<Bullet>();
+
+		// ヒットポインtを減らす
+		hp = hp - bullet.power;
+
 		// 弾の削除
 		Destroy(c.gameObject);
 
-		// 爆発
-		Explosion();
+		// ヒットポイントが0以下であれば
+		if (hp <= 0) {
+			// 爆発
+			Explosion();
 
-		// エネミーの削除
-		Destroy(gameObject);
+			// エネミーの削除
+			Destroy(gameObject);
+		}
 	}
 }
