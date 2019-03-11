@@ -95,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  lifeTime: 5
+  power: 1
 --- !u!50 &1312347123269813989
 Rigidbody2D:
   serializedVersion: 4
@@ -129,6 +131,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0006707907, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.06937659
+  m_Radius: 0.066
